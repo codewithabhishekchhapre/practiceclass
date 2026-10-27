@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: grid;
+            place-items: center;
+            padding: 24px;
+            background: #4b555f;
+            color: #25252a;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .profile-card {
+            position: relative;
+            width: min(240px, 100%);
+            overflow: visible;
+            border-radius: 13px;
+            background: #f8f7fc;
+            box-shadow: 0 8px 24px rgb(20 26 34 / 14%);
+            text-align: center;
+        }
+
+        .profile-top {
+            position: relative;
+            padding: 13px 18px 12px;
+            border-radius: 13px 13px 0 0;
+            background: #f0eff4;
+        }
+
+        .portrait {
+            display: block;
+            width: 138px;
+            height: 138px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center 25%;
+            box-shadow: 0 2px 8px rgb(20 26 34 / 12%);
+        }
+
+        .add-button {
+            position: absolute;
+            top: 122px;
+            right: -20px;
+            display: grid;
+            width: 43px;
+            height: 43px;
+            place-items: center;
+            border: 0;
+            border-radius: 50%;
+            background: #ff5678;
+            box-shadow: 0 5px 14px rgb(255 86 120 / 35%);
+            color: white;
+            font: inherit;
+            font-size: 25px;
+            font-weight: 300;
+            cursor: pointer;
+        }
+
+        .name {
+            margin: 0 0 4px;
+            font-size: 17px;
+            font-weight: 500;
+        }
+
+        .handle,
+        .occupation {
+            margin: 0;
+            color: #aaa9b1;
+            font-size: 9px;
+            line-height: 1.45;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            padding: 18px 12px 14px;
+        }
+
+        .stat-value,
+        .stat-label {
+            display: block;
+        }
+
+        .stat-value {
+            margin-bottom: 3px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .stat-label {
+            color: #aaa9b1;
+            font-size: 9px;
+        }
+
+        .message-button {
+            width: 145px;
+            min-height: 35px;
+            margin: 4px auto 0;
+            border: 0;
+            border-radius: 22px;
+            background: #58bebb;
+            color: white;
+            font: inherit;
+            font-size: 12px;
+            cursor: pointer;
+            transition: background-color 160ms ease, transform 160ms ease;
+        }
+
+        .message-button:hover {
+            transform: translateY(-1px);
+            background: #45aaa7;
+        }
+
+        .more-button {
+            display: block;
+            margin: 15px auto 0;
+            padding: 7px 12px 17px;
+            border: 0;
+            background: transparent;
+            color: #aaa9b1;
+            font: inherit;
+            font-size: 9px;
+            cursor: pointer;
+        }
+
+        .more-button span {
+            margin-left: 2px;
+            font-size: 8px;
+        }
+
+        button:focus-visible {
+            outline: 3px solid #282e36;
+            outline-offset: 3px;
+        }
+    </style>
+</head>
+<body>
+    <main class="profile-card" aria-label="Profile card for Alex Morgan">
+        <section class="profile-top">
+            <img class="portrait" src="images.jpg" alt="Alex Morgan">
+            <button class="add-button" type="button" aria-label="Add Alex Morgan">+</button>
+            <h1 class="name">Alex Morgan</h1>
+            <p class="handle">@alexmorgan</p>
+            <p class="occupation">Designer, New York</p>
+        </section>
+
+        <section class="stats" aria-label="Profile statistics">
+            <div>
+                <span class="stat-value">17</span>
+                <span class="stat-label">SHOTS</span>
+            </div>
+            <div>
+                <span class="stat-value">143</span>
+                <span class="stat-label">FOLLOWING</span>
+            </div>
+            <div>
+                <span class="stat-value">57</span>
+                <span class="stat-label">FOLLOWERS</span>
+            </div>
+        </section>
+
+        <button class="message-button" type="button">Send message</button>
+        <button class="more-button" type="button">MORE <span aria-hidden="true">⌄</span></button>
+    </main>
+</body>
+</html>
